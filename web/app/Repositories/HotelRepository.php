@@ -87,6 +87,7 @@ class HotelRepository extends Repository
         } catch (Exception | Throwable $e) {
             return $this->ise(['message' => $e->getMessage()]);
         }
+        $hotel->load(['rooms.currency', 'rooms.amenities']);
 
         return $this->ok($hotel);
     }
