@@ -10,5 +10,5 @@
 - All Set! Now you can open application in browser with this url [http://localhost:8080](http://localhost:8080) 
 
 #### Credential 
-**Email**: admin@here.com
-**Password**: password
+- **Email**: admin@here.com
+- **Password**: password
