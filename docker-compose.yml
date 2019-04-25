@@ -9,6 +9,10 @@ services:
     environment:
       - "DB_PORT=3306"
       - "DB_HOST=db"
+    links:
+      - db
+    depends_on:
+      - db
 
   web:
     build: images/nginx
@@ -18,6 +22,8 @@ services:
       - ./images/nginx/nginx.conf:/etc/nginx/conf.d/app.conf
     ports:
       - 8000:80
+    links:
+      - app
 
   db:
     image: mysql:5.7
@@ -28,5 +34,3 @@ services:
       - MYSQL_DATABASE=travlr
     ports:
       - "3307:3306"
-    volumes:
-      - ./data/db/mysql:/var/lib/mysql
