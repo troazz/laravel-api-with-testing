@@ -16,16 +16,14 @@ class AmenityTest extends TestCase
     {
         factory(Amenity::class, 5)->create();
 
+        $count = Amenity::count();
         $response = $this->withHeaders([
             'X-Header' => 'XMLHttpRequest',
         ])->json('GET', '/api/amenities');
 
         $response
             ->assertStatus(200)
-            ->assertJson([
-                'current_page' => 1,
-                'data' => true
-            ]);
+            ->assertJsonCount($count);
     }
 
     public function testListAllWithParam()

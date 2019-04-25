@@ -16,16 +16,14 @@ class CurrencyTest extends TestCase
     {
         factory(Currency::class, 5)->create();
 
+        $count = Currency::count();
         $response = $this->withHeaders([
             'X-Header' => 'XMLHttpRequest',
         ])->json('GET', '/api/currencies');
 
         $response
             ->assertStatus(200)
-            ->assertJson([
-                'current_page' => 1,
-                'data' => true
-            ]);
+            ->assertJsonCount($count);
     }
 
     public function testListAllWithParam()
