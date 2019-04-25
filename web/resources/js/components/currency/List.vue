@@ -123,19 +123,27 @@ export default {
       let self = this;
       let loader = this.$loading.show();
       if (confirm("Are you sure want to delete this?")) {
-        axios.delete("/api/currencies/" + id).then(res => {
-          loader.hide();
-          this.$notify({
-            title: "Delete Success",
-            text: "Success delete currency from our system."
+        axios.delete("/api/currencies/" + id)
+          .then(res => {
+            loader.hide();
+            this.$notify({
+              title: "Delete Success",
+              text: "Success delete currency from our system."
+            });
+            let curTotal = self.$data.total - 1;
+            let curLastPage = Math.ceil(curTotal / self.$data.perPage);
+            if (curLastPage < self.$data.page) {
+              self.$data.page = curLastPage;
+            }
+            self.get();
+          }).catch(err => {
+            loader.hide();
+            this.$notify({
+              title: err.message,
+              type: "error",
+              text: err.response.data
+            });
           });
-          let curTotal = self.$data.total - 1;
-          let curLastPage = Math.ceil(curTotal / self.$data.perPage);
-          if (curLastPage < self.$data.page) {
-            self.$data.page = curLastPage;
-          }
-          self.get();
-        });
       }
     },
     get(i) {
@@ -146,14 +154,22 @@ export default {
         q: this.$data.q
       };
       let loader = this.$loading.show();
-      axios.get("/api/currencies", { params: params }).then(res => {
-        loader.hide()
-        let r = res.data;
-        this.$data.records = r.data;
-        this.$data.page = r.current_page;
-        this.$data.last_page = r.last_page;
-        this.$data.total = r.total;
-      });
+      axios.get("/api/currencies", { params: params })
+        .then(res => {
+          loader.hide()
+          let r = res.data;
+          this.$data.records = r.data;
+          this.$data.page = r.current_page;
+          this.$data.last_page = r.last_page;
+          this.$data.total = r.total;
+        }).catch(err => {
+          loader.hide();
+          this.$notify({
+            title: err.message,
+            type: "error",
+            text: err.response.data
+          });
+        });
     }
   }
 };
