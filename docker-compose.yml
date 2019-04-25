@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  app:
+    build: images/php
+    working_dir: /application
+    volumes:
+      - ./web:/application
+    environment:
+      - "DB_PORT=3306"
+      - "DB_HOST=db"
+
+  web:
+    build: images/nginx
+    working_dir: /application
+    volumes:
+      - ./web:/application
+    ports:
+      - 8000:80
+
+  db:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_USER=dev
+      - MYSQL_PASSWORD=dev
+      - MYSQL_DATABASE=travlr
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./data/db/mysql:/var/lib/mysql

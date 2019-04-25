@@ -1,0 +1,25 @@
+2019-04-25 09:01:55,999 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2019-04-25 09:01:56,010 INFO supervisord started with pid 1
+2019-04-25 09:01:57,017 INFO spawned: 'nginx' with pid 7
+2019-04-25 09:01:58,022 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-04-25 09:04:38,498 WARN received SIGTERM indicating exit request
+2019-04-25 09:04:38,505 INFO waiting for nginx to die
+2019-04-25 09:04:38,575 INFO stopped: nginx (exit status 0)
+2019-04-25 09:05:05,287 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2019-04-25 09:05:05,296 INFO supervisord started with pid 1
+2019-04-25 09:05:06,302 INFO spawned: 'nginx' with pid 7
+2019-04-25 09:05:07,312 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-04-25 09:05:09,943 WARN received SIGTERM indicating exit request
+2019-04-25 09:05:09,947 INFO waiting for nginx to die
+2019-04-25 09:05:10,011 INFO stopped: nginx (exit status 0)
+2019-04-25 09:08:44,965 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2019-04-25 09:08:44,974 INFO supervisord started with pid 1
+2019-04-25 09:08:45,978 INFO spawned: 'nginx' with pid 9
+2019-04-25 09:08:46,987 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-04-25 09:11:16,775 WARN received SIGTERM indicating exit request
+2019-04-25 09:11:16,778 INFO waiting for nginx to die
+2019-04-25 09:11:16,855 INFO stopped: nginx (exit status 0)
+2019-04-25 09:11:32,625 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2019-04-25 09:11:32,636 INFO supervisord started with pid 1
+2019-04-25 09:11:33,644 INFO spawned: 'nginx' with pid 7
+2019-04-25 09:11:34,648 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
