@@ -11,5 +11,6 @@ RUN apt-get update \
     && apt-get clean; rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
 
 RUN curl --silent --show-error https://getcomposer.org/installer | php
+RUN composer install
 
 RUN usermod -u 1000 www-data && groupmod -g 1000 www-data

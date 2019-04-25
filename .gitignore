@@ -2,3 +2,5 @@
 images/php/app
 data/db
 web/v8-compile-cache-0
+web/supervisord.log
+web/supervisord.pid
