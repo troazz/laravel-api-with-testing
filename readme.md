@@ -6,7 +6,7 @@
 - run docker-compose `docker-compose up -d`
 - install vendors for application `docker-compose exec app composer install`
 - migrate all tables `docker-compose exec php artisan migrate`
-- seed all tables `docker-compose exec php artisan db:seed`  [OPTIONAL]
+- seed all tables `docker-compose exec php artisan db:seed`
 - All Set! Now you can open application in browser with this url [http://localhost:8080](http://localhost:8000)
 
 #### Credential
